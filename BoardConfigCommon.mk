@@ -126,15 +126,8 @@ TARGET_RECOVERY_DEVICE_DIRS += device/htc/msm8974-common
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
-# SELinux
-include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/htc/msm8974-common/sepolicy
-
 # Hardware
 BOARD_HARDWARE_CLASS := \
     hardware/cyanogen/cmhw \
     $(LOCAL_PATH)/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/htc_sensorhub/sensor_hub/tap2wake"
-
-# Inherit from the proprietary version
--include vendor/htc/msm8974-common/BoardConfigVendor.mk
